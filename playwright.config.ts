@@ -29,7 +29,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: "https://practicesoftwaretesting.com",
-
+    testIdAttribute: "data-test",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
     actionTimeout: 0,
@@ -37,6 +37,9 @@ export default defineConfig({
     video: "retain-on-failure",
     screenshot: "only-on-failure",
     headless: true,
+    launchOptions: { args: ['--disable-features=PasswordLeakDetection',
+      '--disable-save-password-bubble'
+    ] },
   },
 
   /* Configure projects for major browsers */
