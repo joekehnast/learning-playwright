@@ -37,6 +37,9 @@ export default defineConfig({
     video: "retain-on-failure",
     screenshot: "only-on-failure",
     headless: true,
+    launchOptions: { args: ['--disable-features=PasswordLeakDetection',
+      '--disable-save-password-bubble'
+    ] },
   },
 
   /* Configure projects for major browsers */
